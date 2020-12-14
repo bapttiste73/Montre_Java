@@ -3,7 +3,7 @@ public class Radio {
 
 
 	public void allumerRadio() {
-		System.out.println("[RADIO] France Inter, il est 8h00 !");
+		System.out.println("[RADIO] France Inter, il fait beau!");
 	}
 	
 	

@@ -1,10 +1,9 @@
 
-public class Cafetiere {
-
+public class Cafetiere implements iCafetiere {
 
 	public void faireCafe() {
-		System.out.println("Préparation de l'expresso...");
+		System.out.println("PrÃ©paration de l'expresso...");
 	}
-	
-	
+
+		
 }

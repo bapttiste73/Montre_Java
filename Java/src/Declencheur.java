@@ -1,6 +1,15 @@
 
-public interface Declencheur {
+public abstract class Declencheur {
 	
-	public void declencher();
+	protected boolean state = true;
+	public abstract void declencher();
+
+	public boolean isState() {
+		return state;
+	}
+	
+	public void setState(boolean state) {
+		this.state = state;
+	}
 	
 }

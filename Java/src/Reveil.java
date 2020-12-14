@@ -1,5 +1,5 @@
 
-public class Reveil extends Montre implements Declencheur{
+public class Reveil extends Montre {
 	protected int heure,minute;
 	protected boolean statut;
 	protected Declencheur[] declencheurs;
@@ -8,9 +8,9 @@ public class Reveil extends Montre implements Declencheur{
 		super();
 	}
 	
-	public Reveil(int heure, int minute, Declencheur[] declencheurs) {	
+	public Reveil(int heure, int minute) {	
 		this.reglerReveil(heure,minute);
-		this.declencheurs = declencheurs;
+		this.setDeclencheurs();
 	}
 	
 	//Regler le reveil avec une h:m:s lui donne par défaut l'etat allumé
@@ -37,7 +37,10 @@ public class Reveil extends Montre implements Declencheur{
 	
 	public void declencher() {
 		for(Declencheur declencheur : declencheurs) {
-			declencheur.declencher();
+			if (declencheur.isState() == true) {
+				declencheur.declencher();
+			}
+			
 		}
 	}
 	
@@ -64,5 +67,21 @@ public class Reveil extends Montre implements Declencheur{
 	public void setState(boolean state) {
 		this.statut = state;
 	}
+	
+	public Declencheur[] getDeclencheurs() {
+		return declencheurs;
+	}
+	
+	public void setDeclencheurs() {
+		
+		SonnerieDeclencheur declencheur0 = new SonnerieDeclencheur();
+		CafetiereDeclencheur declencheur1 = new CafetiereDeclencheur();
+		RadioDeclencheur declencheur2 = new RadioDeclencheur();
+		
+		Declencheur[] tousLesDeclencheurs = new Declencheur[] {declencheur0, declencheur1, declencheur2};
+		this.declencheurs = tousLesDeclencheurs;
+	}
+
+	
 	
 }

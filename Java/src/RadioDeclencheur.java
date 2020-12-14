@@ -1,11 +1,17 @@
 
-public class RadioDeclencheur extends Radio implements Declencheur {
-
+public class RadioDeclencheur extends Declencheur implements iRadio{
+	
+	protected Radio radio;
 	
 	public RadioDeclencheur() {
+		this.radio = new Radio();
 	}
 	
 	public void declencher() {
-		super.allumerRadio();
+		allumerRadio();
+	}
+	
+	public void allumerRadio() {
+		radio.allumerRadio();
 	}
 }
