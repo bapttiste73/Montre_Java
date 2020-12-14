@@ -1,9 +1,9 @@
 
 public class Montre extends ChaineCompteur{
 	public Montre() {
-		Compteur heure = new Compteur(0,2,1);
-		Compteur minute = new Compteur(0,10,1);
-		Compteur seconde = new Compteur(0,30,1);
+		Compteur heure = new Compteur(0,24,1);
+		Compteur minute = new Compteur(0,60,1);
+		Compteur seconde = new Compteur(0,60,1);
 		this.compteurs = new Compteur[] {heure,minute,seconde};
 	}
 	
@@ -12,15 +12,25 @@ public class Montre extends ChaineCompteur{
 	}
 	
 	public void tourner() {
-		for(int i =0; i<10000; i++) {
+		while(true) {
 			try {
-				Thread.sleep(10);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			this.incrementer();
 			this.afficher();
 		}
+	}
+	
+	public int getHeure() {
+		return this.compteurs[0].getVal();
+	}
+	public int getMinute() {
+		return this.compteurs[1].getVal();
+	}
+	public int getSeconde() {
+		return this.compteurs[2].getVal();
 	}
 	
 	

@@ -1,7 +1,11 @@
 
 public class SonnerieDeclencheur extends Sonnerie implements Declencheur {
 
-	public void Declencher() {
-		
+	
+	public SonnerieDeclencheur() {
+	}
+	
+	public void declencher() {
+		super.sonner();
 	}
 }

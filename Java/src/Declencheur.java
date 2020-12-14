@@ -1,6 +1,6 @@
 
 public interface Declencheur {
 	
-	public void Declencher();
+	public void declencher();
 	
 }

@@ -1,15 +1,9 @@
 
 public class Sonnerie {
 
-	protected Reveil reveil;
-	
-	public Sonnerie() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public void Sonner() {
-		
-		System.out.println("DIIING");
+
+	public void sonner() {
+		System.out.println("DRIIING ! Sonnerie déclenchée.");
 	}
 	
 	
